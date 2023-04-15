@@ -1,3 +1,129 @@
 * {
+    /* background-color: #6D34E4; */
+    box-sizing: border-box;
+}
+
+body{
     background-color: #6D34E4;
+    margin: 0;
+}
+
+.button{
+    margin-top: 1em;
+    color: #FF002D;
+    font-size: 1.2em; 
+    line-height: 1.5;
+    padding: .4em 1.8em; 
+    border: thin solid #FF002D;
+    border-radius: 1.5em;
+    background-color: #6D34E4;
+}
+
+#name_joerg,
+#name_katharina,
+#heart_upper_left,
+#heart_lower_right,
+#rabbit,
+#rings {
+    max-width: 100%;
+    height: auto;
+}
+
+#top_center{
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    padding: 2.5em;
+}
+
+.grid-item {
+    /* border: 1px solid rgba(255, 0, 0, 0.8); */
+}
+
+#top_left{
+    place-self: start;
+}
+
+#top_center{
+    width:381.56px;
+    place-self: center;
+    align-self: start;
+}
+
+#center{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.center_elements{
+    margin-top: 2em;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40%;
+   
+}
+
+#bottom_center{
+    place-self: center;
+    align-self: end;
+}
+
+#bottom_right{
+    place-self: end;
+}
+
+#rabbit{
+   /* position: absolute; */
+   
+}
+
+#rings{
+/* position: absolute; */
+}
+
+@media only screen and (max-width: 768px) {
+
+#rings{
+    max-width: 80%;
+    height: auto;
+}
+
+#rabbit {
+    min-width: 200px;
+    height: auto;
+}
+
+/* #_center_center{
+    min-width: 200px;
+    height: auto;
+} */
+
+.button{
+    font-size: 2.8vw;
+}
+
+#top_center,
+#bottom_center,
+#center{
+    max-width: 66vw;
+    height: auto;
+}
+
+    /* body{
+        background-color: #e43495;
+    } */
+}
+@media only screen and (max-width: 566px) {
+
+    #name_joerg{
+        width: 32vw;
+    }
 }

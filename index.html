@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,38 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="top">
-        <div>
-            <img src="/Material/SVG/2_okt_herz.svg" alt="" width="80px" height="234px">
+    <div class="grid-container">
+        <!-- Top -->
+        <div class="grid-item" id="top_left">
+            <img id="heart_upper_left" src="/Material/SVG/2_okt_herz.svg" alt="" width="80px" height="234px">
         </div>
-        <div>
-            <img src="/Material/SVG/joerg.svg" alt="" width="183px" height="70px">
+        <div class="grid-item" id="top_center">
+            <img id="name_joerg" src="/Material/SVG/joerg.svg" alt="" width="183px" height="70px">
+        </div>
+        <div class="grid-item" id="top_right"></div>
+        <!-- Mitte -->
+        <div class="grid-item" id="center_left"></div>
+        <div class="grid-item" id="center">
+            <img id="rabbit" src="/Material/SVG/hase_trauen_sich.svg" alt="" width="574px" height="791px">
+            <div class="center_elements">
+                <img id="rings" src="/Material/SVG/ringe.svg" alt="" width="286px" height="309px">
+                <button class="button" onclick="window.location.href='https://w3docs.com';">
+                    Willkommen
+                </button>
+            </div>
+        </div>
+        <div class="grid-item" id="center_right"></div>
+        <!-- Bottom -->
+        <div class="grid-item" id="bottom_left"></div>
+        <div class="grid-item" id="bottom_center">
+            <img id="name_katharina" src="/Material/SVG/katharina.svg" alt="" width="381.56px" height="70px">
+        </div>
+        <div class="grid-item" id="bottom_right">
+            <img id="heart_lower_right" src="/Material/SVG/2_okt_herz.svg" alt="" width="80px" height="234px">
         </div>
     </div>
-    <div class="middle">
-        <img src="/Material/SVG/hase_trauen_sich.svg" alt="" width="574px" height="791px">
-        <img src="/Material/SVG/ringe.svg" alt="" width="286px" height="309px">
-    </div>
-    <div class="bottom">
-        <div>
-            <img src="/Material/SVG/katharina.svg" alt="" width="381.56px" height="70px">
-        </div>
-        <div>
-            <img src="/Material/SVG/2_okt_herz.svg" alt="" width="80px" height="234px">
-        </div>
-    </div>
-    
 </body>
+
 </html>
