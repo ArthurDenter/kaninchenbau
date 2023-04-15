@@ -38,7 +38,8 @@ body{
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
-    padding: 2.5em;
+    column-gap: 0.5em;
+    padding: 2em;
 }
 
 .grid-item {
@@ -50,7 +51,6 @@ body{
 }
 
 #top_center{
-    width:381.56px;
     place-self: center;
     align-self: start;
 }
@@ -101,11 +101,6 @@ body{
     height: auto;
 }
 
-/* #_center_center{
-    min-width: 200px;
-    height: auto;
-} */
-
 .button{
     font-size: 2.8vw;
 }
@@ -113,17 +108,7 @@ body{
 #top_center,
 #bottom_center,
 #center{
-    max-width: 66vw;
+    max-width: 56vw;
     height: auto;
 }
-
-    /* body{
-        background-color: #e43495;
-    } */
-}
-@media only screen and (max-width: 566px) {
-
-    #name_joerg{
-        width: 32vw;
-    }
 }
