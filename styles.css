@@ -1,11 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Timepiece';
+    src: url('/Material/FONTS/TIMEPIECE_PERSONAL/Timepiece-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     /* background-color: #6D34E4; */
     box-sizing: border-box;
 }
 
-body{
+.welcome_page_body{
     background-color: #6D34E4;
     margin: 0;
+}
+ 
+.main_page_body{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr auto auto auto 2fr;
+    grid-template-areas: 
+    'header header header header header header'
+    'section1 section1 section1 section1 section1 section1'
+    'section2 section2 section2 section2 section2 section2'
+    'section3 section3 section3 section3 section3 section3'
+    'footer footer footer footer footer footer';
+    border: thin solid #FF002D;
+}
+
+/* .grid-container-main{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr auto auto auto auto auto auto auto auto auto 2fr;
+    grid-template-areas: 
+    'header header header header header header'
+    '. svg1 svg1 svg1 svg1 .'
+    '. svg2 svg2 svg2 svg3 svg3'
+    'svg4 svg5 svg5 svg5 svg5 .'
+    '. . text1 text1 . .'
+    '. . svg6 svg6 . .'
+    '. . text2 text2 . .'
+    '. svg7 svg7 svg7 svg7 .'
+    '. . button1 button1 . . '
+    'text3 text3 text3 text3 text3 text3'
+    'footer footer footer footer footer footer';
+    gap: 1em;
+    border: thin solid #FF002D;
+} */
+
+.nav_bar{
+    grid-area: header;
+    background-color: #FF002D;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_linklist{
+    display: flex;
+    align-items: center;
+}
+
+.nav_linklist_ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap:2em;
+    align-items: center;
+}
+
+.nav_linklist_li{
+    font-size: 1.2em;
+    font-family: 'Inter', sans-serif;
+}
+
+a:link {
+    color: #E0D4B4;
+    text-decoration: none;
+  }
+  
+a:visited {
+    color: #E0D4B4;
+    text-decoration: none;
+  }
+
+a:hover {
+    color:#fff;
+    text-decoration: none;
 }
 
 .button{
@@ -14,9 +99,141 @@ body{
     font-size: 1.2em; 
     line-height: 1.5;
     padding: .4em 1.8em; 
-    border: thin solid #FF002D;
     border-radius: 1.5em;
     background-color: #6D34E4;
+    border: thin solid #FF002D;
+}
+
+.container_section_1{
+    margin-top: 6em;
+    grid-area: section1;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    '. svg1 svg1 svg1 svg1 .'
+    '. svg2 svg2 svg2 svg3 svg3'
+    'svg4 svg5 svg5 svg5 svg5 .';
+    border: thin solid #FF002D;
+}
+
+.container_section_1_svg1{
+    grid-area: svg1;
+}
+
+.container_section_1_svg2{
+    grid-area: svg2;
+}
+
+.container_section_1_svg3{
+    grid-area: svg3;
+}
+
+.container_section_1_svg4{
+    grid-area: svg4;
+}
+
+.container_section_1_svg5{
+    grid-area: svg5;
+}
+
+/* .container_section_1_text_svg_mix{
+    display: flex;
+    justify-content: space-between;
+
+} */
+
+.container_section_2{
+    grid-area: section2;
+    background-color: #FF002D;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    '. . text1 text1 . .'
+    '. . svg6 svg6 . .'
+    '. . text2 text2 . .';
+    border: thin solid #FF002D;
+}
+
+.container_section_2_text1{
+    grid-area: text1;
+}
+
+.container_section_2_svg6{
+    grid-area: svg6;
+}
+
+.container_section_2_text2{
+    grid-area: text2;
+}
+
+.text_on_path{
+    font-size: 1.02em;
+    color: #fff;
+}
+
+.text_on_path{
+    font-family: 'Timepiece', serif;
+    text-align: center;
+}
+
+.container_section_3{
+    grid-area: section3;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    '. svg7 svg7 svg7 svg7 .'
+    '. . button1 button1 . . '
+    'text3 text3 text3 text3 text3 text3';
+    border: thin solid #FF002D;
+}
+
+.container_section_3_svg7{
+    grid-area: svg7;
+}
+
+.container_section_3_button1{
+    grid-area: button1;
+}
+
+.container_section_3_text3{
+    grid-area: text3;
+}
+
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    'svg8 . text4 text5 text6 text7'
+    'svg8 . text4 text5 text6 text7'
+    '. . text4 text5 text6 text7';
+    border: thin solid #FF002D;
+
+}
+
+.footer_svg8{
+    grid-area: svg8;
+}
+
+.footer_text4{
+    grid-area: text4;
+}
+
+.footer_text5{
+    grid-area: text5;
+}
+
+.footer_text6{
+    grid-area: text6;
+}
+
+.footer_text7{
+    grid-area: text7;
 }
 
 #name_joerg,
@@ -34,7 +251,7 @@ body{
     justify-content: center;
 }
 
-.grid-container {
+.grid-container-welcome {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
