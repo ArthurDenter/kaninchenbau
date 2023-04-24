@@ -5,58 +5,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Joerg und Katharina heiraten im Wunderland</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="main_page_body">
-    <nav class="nav_bar">
-        <div class="nav_logo_div"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82" height="92"></div>
-        <div class="nav_linklist">
-            <ul class="nav_linklist_ul">
-                <li class="nav_linklist_li"><a href="">Im Wunderland</a></li>
-                <li class="nav_linklist_li"><a href="">Ausserhalb</a></li>
-                <li class="nav_linklist_li"><a href="">hier anmelden</a></li>
-            </ul>
-        </div>
+    <nav class="nav_bar" id="myTopNav">
+        <ul class="nav_linklist">
+            <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
+                    height="92"></li>
+            <li class="nav_linklist_item" id="nav_first_item"><a href="">Hauptseite</a></li>
+            <li class="nav_linklist_item"><a href="">Im Wunderland</a></li>
+            <li class="nav_linklist_item"><a href="">Ausserhalb</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="">hier registrieren</a></li>
+            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i></a></li>
+        </ul>
     </nav>
     <section class="container_section_1">
         <div class="container_section_1_div_svg1"><img class="main_page_img" id="container_section_1_svg1"
                 src="/Material/SVG/es_wird_einmal.svg" alt="" width="867.79px" height="269.82px"></div>
         <div class="container_section_1_div_svg2"><img class="main_page_img" id="container_section_1_svg2"
-                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="526.26px" height="616.2px"></div>
+                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="867.79px" height="616.2px"></div>
         <div class="container_section_1_div_svg3"><img class="main_page_img" id="container_section_1_svg3"
                 src="/Material/SVG/herzkoenigin.svg" alt="" width="481px" height="606px"></div>
         <div class="container_section_1_div_svg4"><img class="main_page_img" id="container_section_1_svg4"
                 src="/Material/SVG/trank.svg" alt="" width="155.9px" height="200px">
         </div>
         <div class="container_section_1_div_svg5"><img class="main_page_img" id="container_section_1_svg5"
-                src="/Material/SVG/mit_euch_feiern.svg" alt="" width="851.99px" height="280.75px"></div>
+                src="/Material/SVG/mit_euch_feiern.svg" alt="" width="867.79px" height="280.75px"></div>
     </section>
-    <section class="container_section_2 stacked">
+    <section class="container_section_2 stack">
         <div class="container_section_2_text1">
             <p>An und im <br> Wasserschloss<br>Hackhausen,<br> Hackhausen1<br>42697 Solingen</p>
         </div>
+        <div class="container_section_2_div_svg_6_1">
+            <img src="/Material/SVG/kaninchen_mit_uhr.svg" alt="">
+        </div>
         <div class="container_section_2_div_svg6">
-            <svg class="container_section_2_svg6" width="250" height="400" viewBox="102.271 15.232 257.378 432.545">
-                <path id="curve"
+            <!-- <svg class="container_section_2_svg6" width="250" height="400" viewBox="102.271 15.232 257.378 412"> -->
+            <svg class="container_section_2_svg6" viewBox="97.611 15.232 233.182 415">
+                <!-- <path id="curve"
                     d="M 264.809 195.955 C 292.401 173.165 310.809 153.351 310.809 121.455 C 310.809 85.653 278.486 48.789 231.109 48.955 C 182.255 49.126 151.909 84.221 151.909 119.455 C 151.909 205.745 326.4 235.499 326.4 325.5 C 326.4 373.134 283.288 413.062 232.109 413.555 C 172.869 414.126 135.009 372.238 135.509 325.455 C 135.834 295.029 161.055 267.082 187.109 250.155"
+                    style="fill: none; stroke: none;"></path> -->
+
+                <!-- <path id="curve"
+                    d="M 187.109 250.155 C 161.055 267.082 135.834 295.029 135.509 325.455 C 135.009 372.238 172.869 414.126 232.109 413.555 C 283.288 413.062 326.4 373.134 326.4 325.5 C 326.4 235.499 151.909 205.745 151.909 119.455 C 151.909 84.221 182.255 49.126 231.109 48.955 C 278.486 48.789 310.809 85.653 310.809 121.455 C 310.809 153.351 292.401 173.165 264.809 195.955"
+                    style="fill: none; stroke: none;"></path> -->
+
+                <path id="curve"
+                    d="M 171.007 250.155 C 144.953 267.082 119.732 295.029 119.407 325.455 C 118.907 372.238 156.767 414.126 216.007 413.555 C 267.186 413.062 310.298 373.134 310.298 325.5 C 310.298 235.499 135.807 205.745 135.807 119.455 C 135.807 84.221 166.153 49.126 215.007 48.955 C 262.384 48.789 294.707 85.653 294.707 121.455 C 294.707 153.351 276.299 173.165 248.707 195.955"
                     style="fill: none; stroke: none;"></path>
+
                 <text class="container_section_2_pathtext">
-                    <textPath side="right" class="text_on_path" startOffset="12" letter-spacing="1.2"
-                        word-spacing="0.05em" xlink:href="#curve">
+                    <textPath side="left" class="text_on_path" startOffset="12" word-spacing="0.05em"
+                        xlink:href="#curve">
                         ALSO FOLGT DEM WEISSEN KANINCHEN INS WUNDERLAND UND ERZÄHLT MIT IHNEN DIE GESCHICHTE WEITER.
                     </textPath>
                 </text>
             </svg>
         </div>
+        <div class="container_section_2_div_svg_6_2">
+            <img src="/Material/SVG/kuchen.svg" alt="">
+        </div>
         <div class="container_section_2_text2">
-            <p>Am 02.10.23<br>ab 15:00 Uhr<br>Beginn mit der<br>freien Trauung</p>
+            <p>Am 02.10.23<br>ab 15:00 Uhr<br>Beginn mit<br>freien Trauung</p>
         </div>
     </section>
     <section class="container_section_3">
         <div class="container_section_3_div_svg7">
-            <img class="container_section_3_svg7" src="/Material/SVG/frosch_post_fisch_ensemble.svg" alt=""></div>
+            <img class="container_section_3_svg7" src="/Material/SVG/frosch_post_fisch_ensemble.svg" alt="">
+        </div>
         <div class="container_section_3_div_button1">
             <div><button class="button" onclick="window.location.href='/#2.html';">
                     hier anmelden
@@ -72,52 +93,49 @@
         </div>
     </section>
     <footer>
-        <div class="footer_svg8"><img class="main_page_img" src="/Material/SVG/herz_logo.svg" alt=""></div>
-        <div class="footer_text_4">
-            <p>
+        <div class="footer_svg">
+            <img src="/Material/SVG/herz_logo.svg" alt="">
+        </div>
+        <div class="footer_title">
             <h1>Bei Fragen oder Ideen:</h1>
-            Brautpaar:<br>
-            <br>
-            katharina.sattler@gmx.de <br>
-            joerg.adomaitis@icloud.com <br>
-            </p>
         </div>
-        <div class="footer_text_5">
-            <p>
-                <br>
-                Trauzeugen: <br>
-
-            <h2>Franz XYZ</h2>
-            01234/1234 123 <br>
-            franz.xyz@anbeiter.de <br>
-
-            <h2>Florian XYZ</h2>
-
-            01234/1234 123 <br>
-            franz.xyz@anbeiter.de <br>
-            </p>
+        <div class="footer_subtitle1">
+            <h2>Brautpaar:</h2>
         </div>
-        <div class="footer_text_6">
-            <p>
+        <div class="footer_subtitle2">
+            <h2>Trauzeugen:</h2>
+        </div>
+        <div class="footer_subtitle3">
             <h1>Wo:</h1>
-            <br>
-            <br>
-            <br>
-            Wasserschloss Hackhausen <br>
-            Hackhausen 1 <br>
-            42697 Solingen</p>
         </div>
-        <div class="footer_text_7">
-            <p>
+        <div class="footer_subtitle4">
             <h1>Wann:</h1>
-            <br>
-            <br>
-            <br>
-            02.10.2023 <br>
-            Ab 15:00 Uhr <br>
+        </div>
+        <div class="footer_text1">
+            <p>katharina.sattler@gmx.de<br>
+                joerg.adomaitis@icloud.com</p>
+        </div>
+        <div class="footer_text2">
+            <p>Franz XYZ</p>
+            <p>01234/1234 123 <br>
+                franz.xyz@anbeiter.de</p>
+            <p>Florian XYZ</p>
+            <p>01234/1234 123 <br>
+                franz.xyz@anbeiter.de <br>
+            </p>
+        </div>
+        <div class="footer_text3">
+            <p>Wasserschloss Hackhausen <br>
+                Hackhausen 1 <br>
+                42697 Solingen</p>
+        </div>
+        <div class="footer_text4">
+            <p>Am 02.10.23 <br>
+                Ab 15:00 Uhr <br>
             </p>
         </div>
     </footer>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
