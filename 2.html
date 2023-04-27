@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Joerg und Katharina heiraten im Wunderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav_bar" id="myTopNav">
+        <ul class="nav_linklist">
+            <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
+                    height="92"></li>
+            <li class="nav_linklist_item" id="nav_first_item"><a href="">Hauptseite</a></li>
+            <li class="nav_linklist_item"><a href="">Im Wunderland</a></li>
+            <li class="nav_linklist_item"><a href="">Ausserhalb</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="">hier registrieren</a></li>
+            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    <section class="section_register">
+        <form class="register_form" id="register_form" accept-charset="utf-8" autocomplete="on">
+            <div class="form_description">
+                <h1>SchÖn das Du bei unserer Hochzeit dabei sein mÖchtest!</h1>
+                <p>Teile uns kurz mit, wer Du bist, wer Dich begleitet und ob Du oder Deine Begleitung Interesse an
+                    einem FrÜhstÜck auf Schloss Hackhausen am nÄchsten Tag hast. <br> Vielleicht kannst Du uns noch
+                    Musikempfehlungen geben, die auf unserer Hochzeit Deiner Meinung nach, auf jeden Fall gespielt
+                    werden sollten.</p>
+            </div>
+
+            <div class="form_elements" id="form_elements">
+                <div class="form_field_container">
+                    <label for="firstname">Vorname</label>
+                    <input type="text" placeholder="Vorname" name="firstname" required>
+                </div>
+                <div class="form_field_container">
+                    <label for="lastname">Nachname</label>
+                    <input type="text" placeholder="Nachname" name="lastname" required>
+                </div>
+                <div class="form_field_container">
+                    <label for="nextday">Frühstück</label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="nextday">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="form_field_container">
+                    <label for="recommendation">Musikwunsch</label>
+                    <input type="text" placeholder="Interpret - Songname" name="recommendation">
+                </div>
+                <div class="form_field_container" id="add_form_elements">
+                    <button type="button" id="plusBtn0" onclick="addFormSet()">
+                        <!-- plus button svg -->
+                          <div class="plusBtnSVG"><img src="/Material/SVG/plus_button.svg" alt="" width="34px" height="34px"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="clearfix" id="submit_container">
+                <button type="submit" class="signupbtn">absenden</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="footer_svg">
+            <img src="/Material/SVG/herz_logo.svg" alt="">
+        </div>
+        <div class="footer_title">
+            <h1>Bei Fragen oder Ideen:</h1>
+        </div>
+        <div class="footer_subtitle1">
+            <h2>Brautpaar:</h2>
+        </div>
+        <div class="footer_subtitle2">
+            <h2>Trauzeugen:</h2>
+        </div>
+        <div class="footer_subtitle3">
+            <h1>Wo:</h1>
+        </div>
+        <div class="footer_subtitle4">
+            <h1>Wann:</h1>
+        </div>
+        <div class="footer_text1">
+            <p>katharina.sattler@gmx.de<br>
+                joerg.adomaitis@icloud.com</p>
+        </div>
+        <div class="footer_text2">
+            <p>Franz XYZ</p>
+            <p>01234/1234 123 <br>
+                franz.xyz@anbeiter.de</p>
+            <p>Florian XYZ</p>
+            <p>01234/1234 123 <br>
+                franz.xyz@anbeiter.de <br>
+            </p>
+        </div>
+        <div class="footer_text3">
+            <p>Wasserschloss Hackhausen <br>
+                Hackhausen 1 <br>
+                42697 Solingen</p>
+        </div>
+        <div class="footer_text4">
+            <p>Am 02.10.23 <br>
+                Ab 15:00 Uhr <br>
+            </p>
+        </div>
+    </footer>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
