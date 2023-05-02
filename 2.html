@@ -37,22 +37,23 @@
             <div class="form_elements" id="form_elements">
                 <div class="form_field_container">
                     <label for="firstname">Vorname</label>
-                    <input type="text" placeholder="Vorname" name="firstname" required>
+                    <input type="text" placeholder="Vorname" name="firstname" id="firstname0" onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-Z]+$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="lastname">Nachname</label>
-                    <input type="text" placeholder="Nachname" name="lastname" required>
+                    <input type="text" placeholder="Nachname" name="lastname" id="lastname0" onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-Z]+$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="nextday">Frühstück</label>
                     <label class="checkbox">
-                        <input type="checkbox" name="nextday">
+                        <input type="checkbox" name="nextday" value="yes" id="checkBox0">
+                        <input id="forCheckboxHidden0" type="hidden" value="no" name="nextday">
                         <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="form_field_container">
-                    <label for="recommendation">Musikwunsch</label>
-                    <input type="text" placeholder="Interpret - Songname" name="recommendation">
+                    <label for="recommendation">Musikwunsch (Interpret - Titel)</label>
+                    <input type="text" placeholder="Interpret - Songname" name="recommendation" id="recommendation0" onkeyup="useRegexOnRecommendation(recommendation0)" pattern="^[A-Za-z]+\s-\s[A-Za-z]+$">
                 </div>
                 <div class="form_field_container" id="add_form_elements">
                     <button type="button" id="plusBtn0" onclick="addFormSet()">
