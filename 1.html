@@ -114,10 +114,19 @@
     </footer>
     <script language="javascript" type="text/javascript" src="script.js"></script>
     <script>
-        var newOffset = 500;
-        const startOffset = parseInt(document.getElementById("text_on_path").getAttribute("startOffset"));
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+        if ((vh / vw) > 1) {
+            document.getElementById("text_on_path").setAttribute("startOffset", "950");
+        } else if ((vw / vh) > 2 ){
+            document.getElementById("text_on_path").setAttribute("startOffset", "880");
+        } else {
+            document.getElementById("text_on_path").setAttribute("startOffset", "920");
+        };
+
+
+        const startOffset = parseInt(document.getElementById("text_on_path").getAttribute("startOffset"));
 
         window.onscroll = function () {
             scrollRotate();
@@ -133,9 +142,7 @@
 
         function translateTextAlongPath() {
             let pathText = document.getElementById("text_on_path");
-            newOffset = ((window.pageYOffset * 0.05) + startOffset);
-            console.log(newOffset);
-            pathText.setAttribute("startOffset", newOffset);
+            pathText.setAttribute("startOffset", ((window.pageYOffset * 0.05) + startOffset));
         };
 
         function translateTextAlongXAxis() {

@@ -152,6 +152,7 @@ a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1em;
+    margin-top: 2em;
 }
 
 .form_elements>#add_form_elements {
@@ -170,8 +171,8 @@ a:hover {
 .checkbox {
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    /* padding-left: 35px;
+    margin-bottom: 12px; */
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -192,13 +193,15 @@ a:hover {
 
 /* Create a custom checkbox */
 .checkmark {
-    position: absolute;
+    /* position: absolute;
     top: -1.4em;
-    left: 0;
+    left: 0; */
+    display: block;
     height: 2.1em;
     width: 2.1em;
     border: thin solid #FF002D;
     border-radius: 1.5em;
+    margin-top: 1em;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -220,10 +223,10 @@ a:hover {
 
 /* Style the checkmark/indicator */
 .checkbox .checkmark:after {
-    left: 32%;
-    top: 12%;
-    width: 20%;
-    height: 52%;
+    left: 35%;
+    top: 39%;
+    width: 25%;
+    height: 35%;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -1104,6 +1107,8 @@ footer>* h3 {
     .seperator>img {
         max-width: 15vw;
     }
+
+    
 }
 
 /* --- media query for main-page ---*/
