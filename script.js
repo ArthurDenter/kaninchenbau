@@ -1,5 +1,5 @@
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
+function navToggle() {
     var x = document.getElementById("myTopNav");
 
     if (x.className === "nav_bar") {
@@ -11,18 +11,18 @@ function myFunction() {
 
 // regex test
 function useRegexOnRecommendation(htmlElemID) {
-    let regex = /^[A-Za-z]+\s-\s[A-Za-z]+$/g;
+    let regex = /^[A-Za-zäÄöÖüÜß]+\s-\s[A-Za-zäÄöÖüÜß]+$/g;
     let input = htmlElemID.value;
     console.log("value: " + input);
-    if(regex.test(input)) htmlElemID.style = "background-color: white"
-    else htmlElemID.style = "background-color: pink"; 
+    if (regex.test(input)) htmlElemID.style = "background-color: white"
+    else htmlElemID.style = "background-color: pink";
 }
 
 function useRegexOnName(htmlElemID) {
-    let regex = /^[a-zA-Z]+$/g;
+    let regex = /^[a-zA-ZäÄöÖüÜß]+$/g;
     let input = htmlElemID.value;
     console.log("value: " + input);
-    if(regex.test(input)) htmlElemID.style = "background-color: white"
+    if (regex.test(input)) htmlElemID.style = "background-color: white"
     else htmlElemID.style = "background-color: pink";
 }
 
@@ -88,15 +88,15 @@ function addFormElementsLabelInput(label_for, label_text, input_placeholder, inp
         newInputField.setAttribute("name", input_name);
         newInputField.setAttribute("id", input_name + inputCounter);
         newInputField.setAttribute("pattern", regex);
-        switch(input_name){
+        switch (input_name) {
             case "firstname":
-                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter +")");
+                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter + ")");
                 break;
             case "lastname":
-                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter +")");
+                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter + ")");
                 break;
             case "recommendation":
-                newInputField.setAttribute("onkeyup", "useRegexOnRecommendation(" + input_name + inputCounter +")");
+                newInputField.setAttribute("onkeyup", "useRegexOnRecommendation(" + input_name + inputCounter + ")");
         };
         // newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + ")");
         if (input_isrequired) newInputField.setAttribute("required", "");
@@ -142,10 +142,10 @@ function addFormSet() {
     newFormElement.setAttribute("id", "form_elements");
 
     //  create inner div plus elements
-    addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-Z]+$");
-    addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-Z]+$");
+    addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
+    addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
     addFormElementsLabelInput("nextday", "Frühstück", "", "nextday", false, newFormElement, "checkbox");
-    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[A-Za-z]+\s-\s[A-Za-z]+$");
+    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[A-Za-zäÄöÖüÜß]+\s-\s[A-Za-zäÄöÖüÜß]+$");
     addFormElementsLabelInput("", "", "", "", false, newFormElement, "button");
 
     //insert before submit button
@@ -155,27 +155,33 @@ function addFormSet() {
 };
 
 // form submit
-const form = document.getElementsByClassName("register_form")
-form[0].onsubmit = async (e) => {
-    e.preventDefault();
+function formSubmit() {
+    const form = document.getElementsByClassName("register_form")
+    form[0].onsubmit = async () => {
 
-    for (let i = 0; i <= checkboxCounter; i++) {
-        //testen ob checkbox is checked if true => yes if false hidden input => no
-        if (document.getElementById("checkBox" + i).checked) {
-            document.getElementById('forCheckboxHidden' + i).disabled = true;
+        for (let i = 0; i <= checkboxCounter; i++) {
+            //testen ob checkbox is checked if true => yes if false hidden input => no
+            if (document.getElementById("checkBox" + i).checked) {
+                document.getElementById('forCheckboxHidden' + i).disabled = true;
+            };
         };
+
+
+        const formData = new FormData(form[0]);
+        try {
+            let response = await fetch('http://127.0.0.1:8081', {
+                method: 'POST',
+                body: formData
+            });
+
+            let result = await response.text();
+            console.log("Success:", result);
+            alert(result);
+        }
+        catch (error) {
+            console.error("Error:", error);
+            alert(error + "– Bitte schicken Sie Ihre Informationen via Mail.");
+        }
+
     };
-
-
-    const formData = new FormData(form[0]);
-
-    let response = await fetch('http://127.0.0.1:8081', {
-        method: 'POST',
-        body: formData
-    });
-
-    let result = await response.text();
-
-    console.log(result);
-    alert(result);
 };

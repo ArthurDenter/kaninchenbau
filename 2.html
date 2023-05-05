@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Joerg und Katharina heiraten im Wunderland</title>
@@ -16,32 +17,34 @@
         <ul class="nav_linklist">
             <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
                     height="92"></li>
-            <li class="nav_linklist_item" id="nav_first_item"><a href="">Hauptseite</a></li>
-            <li class="nav_linklist_item"><a href="">Im Wunderland</a></li>
-            <li class="nav_linklist_item"><a href="">Ausserhalb</a></li>
-            <li class="nav_linklist_item" id="nav_last_item"><a href="">hier registrieren</a></li>
-            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Hauptseite</a></li>
+            <li class="nav_linklist_item"><a href="3.html">Im Wunderland</a></li>
+            <li class="nav_linklist_item"><a href="4.html">Ausserhalb</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="2.html">hier anmelden</a></li>
+            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="navToggle()">
                     <i class="fa fa-bars"></i></a></li>
         </ul>
     </nav>
     <section class="section_register">
         <form class="register_form" id="register_form" accept-charset="utf-8" autocomplete="on">
             <div class="form_description">
-                <h1>SchÖn das Du bei unserer Hochzeit dabei sein mÖchtest!</h1>
-                <p>Teile uns kurz mit, wer Du bist, wer Dich begleitet und ob Du oder Deine Begleitung Interesse an
-                    einem FrÜhstÜck auf Schloss Hackhausen am nÄchsten Tag hast. <br> Vielleicht kannst Du uns noch
-                    Musikempfehlungen geben, die auf unserer Hochzeit Deiner Meinung nach, auf jeden Fall gespielt
-                    werden sollten.</p>
+                <h1>SCHÖN DAS DU BEI UNSERER HOCHZEIT DABEI SEIN MÖCHTEST!</h1>
+                <p>TEILE UNS KURZ MIT, WER DU BIST, WER DICH BEGLEITET UND OB DU ODER DEINE BEGLEITUNG INTERESSE AN
+                    EINEM FRÜHSTÜCK AUF SCHLOSS HACKHAUSEN AM NÄCHSTEN TAG HAST. <br> VIELLEICHT KANNST DU UNS NOCH
+                    MUSIKEMPFEHLUNGEN GEBEN, DIE AUF UNSERER HOCHZEIT DEINER MEINUNG NACH, AUF JEDEN FALL GESPIELT
+                    WERDEN SOLLTEN.</p>
             </div>
 
             <div class="form_elements" id="form_elements">
                 <div class="form_field_container">
                     <label for="firstname">Vorname</label>
-                    <input type="text" placeholder="Vorname" name="firstname" id="firstname0" onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-Z]+$" required>
+                    <input type="text" placeholder="Vorname" name="firstname" id="firstname0"
+                        onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-ZäÄöÖüÜß]+$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="lastname">Nachname</label>
-                    <input type="text" placeholder="Nachname" name="lastname" id="lastname0" onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-Z]+$" required>
+                    <input type="text" placeholder="Nachname" name="lastname" id="lastname0"
+                        onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-ZäÄöÖüÜß]+$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="nextday">Frühstück</label>
@@ -53,18 +56,21 @@
                 </div>
                 <div class="form_field_container">
                     <label for="recommendation">Musikwunsch (Interpret - Titel)</label>
-                    <input type="text" placeholder="Interpret - Songname" name="recommendation" id="recommendation0" onkeyup="useRegexOnRecommendation(recommendation0)" pattern="^[A-Za-z]+\s-\s[A-Za-z]+$">
+                    <input type="text" placeholder="Interpret - Songname" name="recommendation" id="recommendation0"
+                        onkeyup="useRegexOnRecommendation(recommendation0)"
+                        pattern="^[A-Za-zäÄöÖüÜß]+\s-\s[A-Za-zäÄöÖüÜß]+$">
                 </div>
                 <div class="form_field_container" id="add_form_elements">
                     <button type="button" id="plusBtn0" onclick="addFormSet()">
                         <!-- plus button svg -->
-                          <div class="plusBtnSVG"><img src="/Material/SVG/plus_button.svg" alt="" width="34px" height="34px"></div>
+                        <div class="plusBtnSVG"><img src="/Material/SVG/plus_button.svg" alt="" width="34px"
+                                height="34px"></div>
                     </button>
                 </div>
             </div>
 
             <div class="clearfix" id="submit_container">
-                <button type="submit" class="signupbtn">absenden</button>
+                <button onclick="formSubmit()" class="signupbtn">absenden</button>
             </div>
         </form>
     </section>
@@ -81,37 +87,18 @@
         <div class="footer_subtitle2">
             <h2>Trauzeugen:</h2>
         </div>
-        <div class="footer_subtitle3">
-            <h1>Wo:</h1>
-        </div>
-        <div class="footer_subtitle4">
-            <h1>Wann:</h1>
-        </div>
         <div class="footer_text1">
             <p>katharina.sattler@gmx.de<br>
                 joerg.adomaitis@icloud.com</p>
         </div>
         <div class="footer_text2">
-            <p>Franz XYZ</p>
-            <p>01234/1234 123 <br>
-                franz.xyz@anbeiter.de</p>
-            <p>Florian XYZ</p>
-            <p>01234/1234 123 <br>
-                franz.xyz@anbeiter.de <br>
-            </p>
-        </div>
-        <div class="footer_text3">
-            <p>Wasserschloss Hackhausen <br>
-                Hackhausen 1 <br>
-                42697 Solingen</p>
-        </div>
-        <div class="footer_text4">
-            <p>Am 02.10.23 <br>
-                Ab 15:00 Uhr <br>
+            <p>Franz Juraszczyk<br>t: 0162 68 50 522</p>
+            <p>Florian Annuschat<br>t: 0174 62 57 225</p>
             </p>
         </div>
     </footer>
-    <script language="javascript" type="text/javascript" src="script.js"></script>
+    <script language="javascript" type="text/javascript" src="script.js">
+    </script>
 
 </body>
 

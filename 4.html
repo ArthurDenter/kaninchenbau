@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <title>Joerg und Katharina heiraten im Wunderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav_bar" id="myTopNav">
+        <ul class="nav_linklist">
+            <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
+                    height="92"></li>
+            <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Hauptseite</a></li>
+            <li class="nav_linklist_item"><a href="3.html">Im Wunderland</a></li>
+            <li class="nav_linklist_item"><a href="4.html">Ausserhalb</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="2.html">hier anmelden</a></li>
+            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="navToggle()">
+                    <i class="fa fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="map_description_container">
+            <p>AUSSERHALB VOM KANINCHENBAU KANN HIER ÜBERNACHTET WERDEN:</p>
+        </div>
+        <div class="map_interactive">
+            <div class='sidebar'>
+                <div class='heading'id='heading'>
+                    <h1>ÜBERNACHTUNGS-<br>MÖGLICHKEITEN</h1>
+                </div>
+                <div id='listings' class='listings'></div>
+            </div>
+            <div id="map"></div>
+            <script>
+                // TO MAKE THE MAP APPEAR YOU MUST
+                // ADD YOUR ACCESS TOKEN FROM
+                // https://account.mapbox.com
+                mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyZGVudDIzNCIsImEiOiJjbGg2a3VtMHIwNzJoM3FzNmxsZGx5MTkxIn0.miKQdh_j8Qz_UmFWgX3XhA';
+                const map = new mapboxgl.Map({
+                    container: 'map', // container ID
+                    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+                    style: 'mapbox://styles/arthurdent234/clh7j1zoe00uv01qy8hp9djf3', // style URL
+                    center: [6.994, 51.151], // starting position [lng, lat] 51.151,6.994
+                    zoom: 13.3 // starting zoom
+                });
+                const places = {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 29 34 008",
+                                "phone": "+49212934008",
+                                "address": "Rheinische Straße 13-15",
+                                "website": "https://www.gut-hahn.de/",
+                                "city": "Haan",
+                                "country": "Germany",
+                                "postalCode": "42781",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjoyODI4ZmJlNi1kOTgyLTQ3NjctYmQyNi1jYWNjMDJmYzAwMTI=",
+                                "place_name": "Gut Hahn"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    7.0286680,
+                                    51.2053508
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "0dcf61045222705b8ac6eb13065f96b5"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 2173 922 00",
+                                "phone": "+49217392200",
+                                "address": "Elberfelder Straße 45",
+                                "website": "https://www.gravenberg.de/",
+                                "city": "Langenfeld",
+                                "country": "Germany",
+                                "postalCode": "40764",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjo5OTZhODhkOS1mYWUzLTRlYTgtOWU3Mi0xZTAzNzIyY2M0ODM=",
+                                "place_name": "Romantik Hotel Gravenberg"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    6.99382,
+                                    51.12534
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "438af7a13d55361f5aa95f71062cf405"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 29 91 40",
+                                "phone": "+4921299140",
+                                "address": "Nordstraße 26-28",
+                                "website": "https://www.hotel-im-park-haan.de/",
+                                "city": "Haan",
+                                "country": "Germany",
+                                "postalCode": "42781",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjpiN2EzYjE1NS01YjhkLTRlN2EtYmFlNy1mOTVhYmVkMzk5ODc=",
+                                "place_name": "Hotel im Park"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    7.0143554,
+                                    51.1994177
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "62485697965de713afbaf697ff2ef3e7"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 04 77 80",
+                                "phone": "+4921047780",
+                                "address": "Düsseldorfer Straße 253",
+                                "website": "https://www.guthoehne.de",
+                                "city": "Mettmann",
+                                "country": "Germany",
+                                "postalCode": "40822",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjowMWY5MzU3OS0wODdiLTQ0ZmYtOTAyMy0zMDYxYjhkYmVkMjQ=",
+                                "place_name": "Land Gut Höhne"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    6.9319789,
+                                    51.2535531
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "748c053fe89944e907036922773da681"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 29 92 20",
+                                "phone": "+4921299220",
+                                "address": "Neuer Markt 23",
+                                "website": "https://www.stadtquartier.nrw/",
+                                "city": "Haan",
+                                "country": "Germany",
+                                "postalCode": "42781",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjo4ZmZmYThmOC1hZDRkLTRkMjQtOTc5Ny02N2NhYmQxYWM3NTU=",
+                                "place_name": "Best Western Plus Hotel Stadtquartier Haan"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    7.0094328,
+                                    51.1938281
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "955b274608e6ad7ae18434b711176747"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 22 58 000",
+                                "phone": "+49212258000",
+                                "address": "In der Freiheit 48",
+                                "website": "https://hotel-graefratherhof.de/",
+                                "city": "Solingen",
+                                "country": "Germany",
+                                "postalCode": "42653",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjo2Zjc5ZTZhYi1kZWU5LTRiYzctODEwYi03ODQyNWE1OTJiODc",
+                                "place_name": "Hotel Gräfrather Hof, Zur Post"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    7.0714,
+                                    51.20835
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "1cf14354ef618a189f38476ceb453f37"
+                        },
+                        {
+                            "type": "Feature",
+                            "properties": {
+                                "phoneFormatted": "+49 21 26 89 28 893",
+                                "phone": "+4921268928893",
+                                "address": "Aufderhöher Str. 123",
+                                "website": "keine Webseite",
+                                "city": "Solingen",
+                                "country": "Germany",
+                                "postalCode": "42699",
+                                "state": "NRW",
+                                "accuracy": "rooftop",
+                                "mapbox_id": "dXJuOm1ieGFkcjpjMDE3NTI0MC1jNmNmLTRiMGItYjEwMS0xYWI0YTE0ZGNjMTY=",
+                                "place_name": "Landgasthaus Zur Post"
+                            },
+                            "geometry": {
+                                "coordinates": [
+                                    7.0146495,
+                                    51.1411976
+                                ],
+                                "type": "Point"
+                            },
+                            "id": "f7cdd89f809f5518c63e11110dc03b99"
+                        }
+                    ]
+                };
+                /* Assign a unique ID to each place */
+                places.features.forEach(function (place, i) {
+                    place.properties.id = i;
+                });
+
+                map.on('load', () => {
+                    /* Add the data to your map as a layer */
+                    map.addLayer({
+                        id: 'locations',
+                        type: 'circle',
+                        paint: {
+                            'circle-radius': 6,
+                            'circle-color': '#FF002D',
+                            'circle-stroke-color': 'white',
+                            'circle-stroke-width': 0.5
+                        },
+                        /* Add a GeoJSON source containing place coordinates and information. */
+                        source: {
+                            type: 'geojson',
+                            data: places
+                        }
+                    });
+                    buildLocationList(places);
+                });
+
+                function buildLocationList(places) {
+                    for (const place of places.features) {
+                        /* Add a new listing section to the sidebar. */
+                        const listings = document.getElementById('listings');
+                        const listing = listings.appendChild(document.createElement('div'));
+                        /* Assign a unique `id` to the listing. */
+                        listing.id = `listing-${place.properties.id}`;
+                        /* Assign the `item` class to each listing for styling. */
+                        listing.className = 'item';
+
+                        /* Add the link to the individual listing created above. */
+                        const link = listing.appendChild(document.createElement('a'));
+                        // link.href = '#';
+                        // link.className = 'title';
+                        // link.id = `link-${place.properties.id}`;
+                        // link.innerHTML = `${place.properties.place_name}`;
+                        link.setAttribute("href", "#heading");
+                        link.setAttribute("id", `link-${place.properties.id}`);
+                        link.setAttribute("class", "title");
+                        const linkText = document.createTextNode(`${place.properties.place_name}`);
+                        link.appendChild(linkText);
+
+                        /* Add details to the individual listing. */
+                        const details = listing.appendChild(document.createElement('div'));
+                        //details.innerHTML = `Stadt: ${place.properties.city}`;
+                        const detailsText = document.createTextNode(`Stadt: ${place.properties.city}`);
+                        details.appendChild(detailsText);
+                      
+                        link.addEventListener('click', function () {
+                            for (const feature of places.features) {
+                                if (this.id === `link-${feature.properties.id}`) {
+                                    flyToStore(feature);
+                                    createPopUp(feature);
+                                }
+                            }
+                            const activeItem = document.getElementsByClassName('active');
+                            if (activeItem[0]) {
+                                activeItem[0].classList.remove('active');
+                            }
+                            this.parentNode.classList.add('active');
+                        });
+                    }
+                };
+
+                function flyToStore(currentFeature) {
+                    map.flyTo({
+                        center: currentFeature.geometry.coordinates,
+                        zoom: 15
+                    });
+                }
+
+                function createPopUp(currentFeature) {
+                    const popUps = document.getElementsByClassName('mapboxgl-popup');
+                    /** Check if there is already a popup on the map and if so, remove it */
+                    if (popUps[0]) popUps[0].remove();
+
+                    const popup = new mapboxgl.Popup({ closeOnClick: false })
+                        .setLngLat(currentFeature.geometry.coordinates)
+                        .setHTML(`<h3>${currentFeature.properties.place_name}</h3><h4>Kontakt:<br>t ${currentFeature.properties.phoneFormatted}<br>w <a href="${currentFeature.properties.website}" class="mapboxgl-links" target="_blank"">${currentFeature.properties.website}</a><br>${currentFeature.properties.address}<br>${currentFeature.properties.postalCode} ${currentFeature.properties.city}</h4>`)
+                        .addTo(map);
+                };
+
+                map.on('click', (event) => {
+                    /* Determine if a feature in the "locations" layer exists at that point. */
+                    const features = map.queryRenderedFeatures(event.point, {
+                        layers: ['locations']
+                    });
+
+                    /* If it does not exist, return */
+                    if (!features.length) return;
+
+                    const clickedPoint = features[0];
+
+                    /* Fly to the point */
+                    flyToStore(clickedPoint);
+
+                    /* Close all other popups and display popup for clicked store */
+                    createPopUp(clickedPoint);
+
+                    /* Highlight listing in sidebar (and remove highlight for all other listings) */
+                    const activeItem = document.getElementsByClassName('active');
+                    if (activeItem[0]) {
+                        activeItem[0].classList.remove('active');
+                    }
+                    const listing = document.getElementById(
+                        `listing-${clickedPoint.properties.id}`
+                    );
+                    listing.classList.add('active');
+                });
+
+            </script>
+        </div>
+        <div class="map_additional_information">
+            <p>EIN SHUTTLESERVICE FÄHRT AB 01:00 UHR EINMAL STÜNDLICH DIE GESTRICHELTE ROUTE ENTLANG</p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_svg">
+            <img src="/Material/SVG/herz_logo.svg" alt="">
+        </div>
+        <div class="footer_title">
+            <h1>Bei Fragen oder Ideen:</h1>
+        </div>
+        <div class="footer_subtitle1">
+            <h2>Brautpaar:</h2>
+        </div>
+        <div class="footer_subtitle2">
+            <h2>Trauzeugen:</h2>
+        </div>
+        <div class="footer_text1">
+            <p>katharina.sattler@gmx.de<br>
+                joerg.adomaitis@icloud.com</p>
+        </div>
+        <div class="footer_text2">
+            <p>Franz Juraszczyk<br>t: 0162 68 50 522</p>
+            <p>Florian Annuschat<br>t: 0174 62 57 225</p>
+            </p>
+        </div>
+    </footer>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

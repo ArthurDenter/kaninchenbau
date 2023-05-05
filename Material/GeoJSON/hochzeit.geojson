@@ -1,0 +1,117 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "street",
+        "mapbox_id": "dXJuOm1ieGFkcjoyODI4ZmJlNi1kOTgyLTQ3NjctYmQyNi1jYWNjMDJmYzAwMTI=",
+        "place_name": "Rheinische Straße, 42781 Haan, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          7.033408,
+          51.206054
+        ],
+        "type": "Point"
+      },
+      "id": "0dcf61045222705b8ac6eb13065f96b5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjozOTI0OWJmZi0yMjI3LTRjM2YtYjFiZC1iNzVhNTQyNTUyYTM=",
+        "place_name": "Hackhausen 1, 42697 Solingen, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          6.991951,
+          51.151448
+        ],
+        "type": "Point"
+      },
+      "id": "38d53b198ddd77b0efdb14950c6fa2a0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjo5OTZhODhkOS1mYWUzLTRlYTgtOWU3Mi0xZTAzNzIyY2M0ODM=",
+        "place_name": "Elberfelder Straße 45, 40764 Langenfeld, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          6.993559,
+          51.125472
+        ],
+        "type": "Point"
+      },
+      "id": "438af7a13d55361f5aa95f71062cf405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjpiN2EzYjE1NS01YjhkLTRlN2EtYmFlNy1mOTVhYmVkMzk5ODc=",
+        "place_name": "Nordstraße 26, 42781 Haan, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          7.014211,
+          51.199257
+        ],
+        "type": "Point"
+      },
+      "id": "62485697965de713afbaf697ff2ef3e7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjowMWY5MzU3OS0wODdiLTQ0ZmYtOTAyMy0zMDYxYjhkYmVkMjQ=",
+        "place_name": "Düsseldorfer Straße 253, 40822 Mettmann, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          6.931571,
+          51.253988
+        ],
+        "type": "Point"
+      },
+      "id": "748c053fe89944e907036922773da681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjo4ZmZmYThmOC1hZDRkLTRkMjQtOTc5Ny02N2NhYmQxYWM3NTU=",
+        "place_name": "Neuer Markt 23, 42781 Haan, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          7.009518,
+          51.193746
+        ],
+        "type": "Point"
+      },
+      "id": "955b274608e6ad7ae18434b711176747"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "rooftop",
+        "mapbox_id": "dXJuOm1ieGFkcjpjMDE3NTI0MC1jNmNmLTRiMGItYjEwMS0xYWI0YTE0ZGNjMTY=",
+        "place_name": "Aufderhöher Straße 123, 42699 Solingen, Germany"
+      },
+      "geometry": {
+        "coordinates": [
+          7.014682,
+          51.141211
+        ],
+        "type": "Point"
+      },
+      "id": "f7cdd89f809f5518c63e11110dc03b99"
+    }
+  ],
+  "type": "FeatureCollection"
+}

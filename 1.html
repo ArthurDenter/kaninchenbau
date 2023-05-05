@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Joerg und Katharina heiraten im Wunderland</title>
@@ -16,11 +17,11 @@
         <ul class="nav_linklist">
             <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
                     height="92"></li>
-            <li class="nav_linklist_item" id="nav_first_item"><a href="">Hauptseite</a></li>
-            <li class="nav_linklist_item"><a href="">Im Wunderland</a></li>
-            <li class="nav_linklist_item"><a href="">Ausserhalb</a></li>
-            <li class="nav_linklist_item" id="nav_last_item"><a href="">hier registrieren</a></li>
-            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Hauptseite</a></li>
+            <li class="nav_linklist_item"><a href="3.html">Im Wunderland</a></li>
+            <li class="nav_linklist_item"><a href="4.html">Ausserhalb</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="2.html">hier anmelden</a></li>
+            <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="navToggle()">
                     <i class="fa fa-bars"></i></a></li>
         </ul>
     </nav>
@@ -28,9 +29,11 @@
         <div class="container_section_1_div_svg1"><img class="main_page_img" id="container_section_1_svg1"
                 src="/Material/SVG/es_wird_einmal.svg" alt="" width="867.79px" height="269.82px"></div>
         <div class="container_section_1_div_svg2"><img class="main_page_img" id="container_section_1_svg2"
-                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="867.79px" height="616.2px"></div>
+                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="867.79px" height="616.2px"
+                style="transform: translateX(20px);"></div>
         <div class="container_section_1_div_svg3"><img class="main_page_img" id="container_section_1_svg3"
-                src="/Material/SVG/herzkoenigin.svg" alt="" width="481px" height="606px"></div>
+                src="/Material/SVG/herzkoenigin.svg" alt="" width="481px" height="606px"
+                style="transform: translateX(-20px);"></div>
         <div class="container_section_1_div_svg4"><img class="main_page_img" id="container_section_1_svg4"
                 src="/Material/SVG/trank.svg" alt="" width="155.9px" height="200px">
         </div>
@@ -39,7 +42,7 @@
     </section>
     <section class="container_section_2 stack">
         <div class="container_section_2_text1">
-            <p>An und im <br> Wasserschloss<br>Hackhausen,<br> Hackhausen1<br>42697 Solingen</p>
+            <p>AN UND IM <br> WASSERSCHLOSS<br>HACKHAUSEN,<br> HACKHAUSEN1<br>42697 SOLINGEN</p>
         </div>
         <div class="container_section_2_div_svg_6_1">
             <img src="/Material/SVG/kaninchen_mit_uhr.svg" alt="">
@@ -47,31 +50,25 @@
         <div class="container_section_2_div_svg6">
             <!-- <svg class="container_section_2_svg6" width="250" height="400" viewBox="102.271 15.232 257.378 412"> -->
             <svg class="container_section_2_svg6" viewBox="97.611 15.232 233.182 415">
-                <!-- <path id="curve"
-                    d="M 264.809 195.955 C 292.401 173.165 310.809 153.351 310.809 121.455 C 310.809 85.653 278.486 48.789 231.109 48.955 C 182.255 49.126 151.909 84.221 151.909 119.455 C 151.909 205.745 326.4 235.499 326.4 325.5 C 326.4 373.134 283.288 413.062 232.109 413.555 C 172.869 414.126 135.009 372.238 135.509 325.455 C 135.834 295.029 161.055 267.082 187.109 250.155"
-                    style="fill: none; stroke: none;"></path> -->
-
-                <!-- <path id="curve"
-                    d="M 187.109 250.155 C 161.055 267.082 135.834 295.029 135.509 325.455 C 135.009 372.238 172.869 414.126 232.109 413.555 C 283.288 413.062 326.4 373.134 326.4 325.5 C 326.4 235.499 151.909 205.745 151.909 119.455 C 151.909 84.221 182.255 49.126 231.109 48.955 C 278.486 48.789 310.809 85.653 310.809 121.455 C 310.809 153.351 292.401 173.165 264.809 195.955"
-                    style="fill: none; stroke: none;"></path> -->
 
                 <path id="curve"
                     d="M 171.007 250.155 C 144.953 267.082 119.732 295.029 119.407 325.455 C 118.907 372.238 156.767 414.126 216.007 413.555 C 267.186 413.062 310.298 373.134 310.298 325.5 C 310.298 235.499 135.807 205.745 135.807 119.455 C 135.807 84.221 166.153 49.126 215.007 48.955 C 262.384 48.789 294.707 85.653 294.707 121.455 C 294.707 153.351 276.299 173.165 248.707 195.955"
                     style="fill: none; stroke: none;"></path>
 
                 <text class="container_section_2_pathtext">
-                    <textPath side="left" class="text_on_path" startOffset="12" word-spacing="0.05em"
+                    <textPath side="left" id="text_on_path" class="text_on_path" startOffset="900" word-spacing="0.05em"
                         xlink:href="#curve">
                         ALSO FOLGT DEM WEISSEN KANINCHEN INS WUNDERLAND UND ERZÄHLT MIT IHNEN DIE GESCHICHTE WEITER.
+                        <!-- .WEITER GESCHICHTE DIE IHNEN MIT ERZÄHLT UND WUNDERLAND INS KANINCHEN WEISSEN DEM FOLGT ALSO -->
                     </textPath>
                 </text>
             </svg>
         </div>
         <div class="container_section_2_div_svg_6_2">
-            <img src="/Material/SVG/kuchen.svg" alt="">
+            <img id="cake_svg" src="/Material/SVG/kuchen.svg" alt="">
         </div>
         <div class="container_section_2_text2">
-            <p>Am 02.10.23<br>ab 15:00 Uhr<br>Beginn mit<br>freien Trauung</p>
+            <p>AM 02.10.23<br>AB 14:30 UHR<br>BEGINN MIT<br>FREIEN TRAUUNG</p>
         </div>
     </section>
     <section class="container_section_3">
@@ -79,16 +76,16 @@
             <img class="container_section_3_svg7" src="/Material/SVG/frosch_post_fisch_ensemble.svg" alt="">
         </div>
         <div class="container_section_3_div_button1">
-            <div><button class="button" onclick="window.location.href='/#2.html';">
+            <div><button class="button" onclick="window.location.href='/2.html';">
                     hier anmelden
                 </button></div>
             <div><img class="container_section_3_svg_7_1" src="/Material/SVG/pfeil.svg" alt=""></div>
         </div>
         <div class="container_section_3_div_text3">
             <p>
-                Bitte lasst uns wissen, ob ihr bei unserem besonderen Tag dabei sein werdet — egal ob mit einem
-                freudigen Ja oder einem herzlichen Nein. Wir freuen uns auf euch und einen unvergesslichen Tag im
-                Wunderland!
+                BITTE LASST UNS WISSEN, OB IHR BEI UNSEREM BESONDEREN TAG DABEI SEIN WERDET — EGAL OB MIT EINEM
+                FREUDIGEN JA ODER EINEM HERZLICHEN NEIN. WIR FREUEN UNS AUF EUCH UND EINEN UNVERGESSLICHEN TAG IM
+                WUNDERLAND!
             </p>
         </div>
     </section>
@@ -105,37 +102,52 @@
         <div class="footer_subtitle2">
             <h2>Trauzeugen:</h2>
         </div>
-        <div class="footer_subtitle3">
-            <h1>Wo:</h1>
-        </div>
-        <div class="footer_subtitle4">
-            <h1>Wann:</h1>
-        </div>
         <div class="footer_text1">
             <p>katharina.sattler@gmx.de<br>
                 joerg.adomaitis@icloud.com</p>
         </div>
         <div class="footer_text2">
-            <p>Franz XYZ</p>
-            <p>01234/1234 123 <br>
-                franz.xyz@anbeiter.de</p>
-            <p>Florian XYZ</p>
-            <p>01234/1234 123 <br>
-                franz.xyz@anbeiter.de <br>
-            </p>
-        </div>
-        <div class="footer_text3">
-            <p>Wasserschloss Hackhausen <br>
-                Hackhausen 1 <br>
-                42697 Solingen</p>
-        </div>
-        <div class="footer_text4">
-            <p>Am 02.10.23 <br>
-                Ab 15:00 Uhr <br>
+            <p>Franz Juraszczyk<br>t: 0162 68 50 522</p>
+            <p>Florian Annuschat<br>t: 0174 62 57 225</p>
             </p>
         </div>
     </footer>
     <script language="javascript" type="text/javascript" src="script.js"></script>
+    <script>
+        var newOffset = 500;
+        const startOffset = parseInt(document.getElementById("text_on_path").getAttribute("startOffset"));
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+        window.onscroll = function () {
+            scrollRotate();
+            translateTextAlongPath();
+            translateTextAlongXAxis();
+            translateImgAlongXAxis();
+        };
+
+        function scrollRotate() {
+            let image = document.getElementById("container_section_1_svg4");
+            image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+        };
+
+        function translateTextAlongPath() {
+            let pathText = document.getElementById("text_on_path");
+            newOffset = ((window.pageYOffset * 0.05) + startOffset);
+            console.log(newOffset);
+            pathText.setAttribute("startOffset", newOffset);
+        };
+
+        function translateTextAlongXAxis() {
+            let txtImg = document.getElementById("container_section_1_svg2");
+            txtImg.style.transform = "translateX(" + (((window.pageYOffset * 0.015) + 20) * (-1)) + "px)";
+        }
+
+        function translateImgAlongXAxis() {
+            let img = document.getElementById("container_section_1_svg3");
+            img.style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+        }
+    </script>
 </body>
 
 </html>

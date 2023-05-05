@@ -64,6 +64,7 @@ const server = http.createServer((req, res) => {
                 // Don't use the connection here, it has been returned to the pool.
               });
           });
+          
     };
     //     //drop data into mysql database
     //     connection.connect(function (err) {
@@ -116,14 +117,23 @@ const server = http.createServer((req, res) => {
                     index++;
                 }
             });
-
+            try{
             writeToDatabase(arr[0], arr[1], arr[2], arr[3]);
             //console.log("Datenbankdummy: " + arr[0] + ", " + arr[1] + ", " + arr[2] + ", " + arr[3]);
+            }
+            catch (e) {
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.write(e);
+                res.end();
+            };
 
             if ((Array.isArray(dataobject["firstname"]) && (dataobject["firstname"].length > 0)) && (Array.isArray(dataobject["lastname"]) && (dataobject["lastname"].length > 0)) && (Array.isArray(dataobject["nextday"]) && (dataobject["nextday"].length > 0)) && (Array.isArray(dataobject["recommendation"]) && (dataobject["recommendation"].length > 0))) {
                 dataSplit(dataobject);
             } else {
-                console.log("Alle Daten geschrieben.")
+                console.log("Alle Daten geschrieben.");
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.write('Danke, Deine Daten wurden gespeichert.');
+                res.end();
             };
         };
         dataSplit(fields);
@@ -131,8 +141,6 @@ const server = http.createServer((req, res) => {
 
 
 
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write('Danke, Deine Daten wurden gespeichert.');
-    res.end();
+    
 
 }).listen(8081); // Activates this server, listening on port 8081.
