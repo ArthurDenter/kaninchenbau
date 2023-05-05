@@ -171,8 +171,6 @@ a:hover {
 .checkbox {
     display: block;
     position: relative;
-    /* padding-left: 35px;
-    margin-bottom: 12px; */
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -1139,6 +1137,50 @@ footer>* h3 {
         font-size: 0.8em;
     }
 
+    .form_elements>div>input {
+        font-size: 0.6em;
+    }
+
+    .form_elements>div>label {
+        font-size: 0.7em;
+    }
+
+    .clearfix>button {
+        font-size: 0.7em;
+    }
+
+    .plusBtnSVG > img{
+        max-width: 100%;
+    }
+
+    .listings {
+        font-size: 0.6em;
+    }
+
+    .heading>h1{
+        font-size: 0.8em;
+    }
+
+    .map_interactive {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 6vw;
+    }
+
+    #map {
+        width: 100vw;
+        height: 120vw;
+        order: 1;
+    }
+
+    .sidebar{
+        order: 2;
+    }
+    .listings .item {
+        border-bottom: 1px dotted #FF002D;
+    }
 
     footer {
         grid-auto-columns: 1fr;
