@@ -334,19 +334,21 @@ a:hover {
 .container_section_2_text1 {
     grid-area: 3 / 2;
     justify-self: center;
-    align-self: start;
+    align-self: center;
     width: max-content;
     height: max-content;
 
 }
 
+.heading>h1,
+.container_section_2_text2,
 .container_section_2_text1>p {
     font-size: 3vw;
     text-align: center;
     font-family: 'Timepiece', serif;
-    color: #6D34E4;
+    color:#E0D4B4;
     margin: 0;
-
+    line-height: 98%;
 }
 
 .container_section_2_div_svg_6_1 {
@@ -471,7 +473,7 @@ a:hover {
     direction: rtl;
 }
 
-.heading>h1,
+/* 
 .container_section_2_text2>p {
     font-size: 3vw;
     text-align: center;
@@ -481,7 +483,7 @@ a:hover {
     color: #6D34E4;
     margin: 0;
 
-}
+} */
 
 .container_section_2_pathtext {
     font-size: 1.11em;
