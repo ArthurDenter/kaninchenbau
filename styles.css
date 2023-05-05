@@ -276,6 +276,7 @@ a:hover {
         '. svg2 svg2 svg2 svg2 svg3'
         'svg4 svg5 svg5 svg5 svg5 .';
     max-width: 100vw;
+    overflow: hidden;
 }
 
 .container_section_1_div_svg1 {
@@ -856,6 +857,7 @@ footer {
         ". . . . text1 text2";
     max-width: 100vw;
     background-color: #AD9862;
+    overflow: hidden;
 }
 
 .footer_svg {
