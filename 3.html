@@ -19,38 +19,38 @@
         <ul class="nav_linklist">
             <li class="nav_linklist_logo"><img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
                     height="92"></li>
-            <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Hauptseite</a></li>
+            <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Die Reise</a></li>
+            <li class="nav_linklist_item"><a href="2.html">Vor den Toren</a></li>
             <li class="nav_linklist_item"><a href="3.html">Im Wunderland</a></li>
-            <li class="nav_linklist_item"><a href="4.html">Ausserhalb</a></li>
-            <li class="nav_linklist_item" id="nav_last_item"><a href="2.html">hier anmelden</a></li>
+            <li class="nav_linklist_item" id="nav_last_item"><a href="4.html">Die Rückkehr</a></li>
             <li class="nav_linklist_toggle"><a href="javascript:void(0);" class="icon" onclick="navToggle()">
                     <i class="fa fa-bars"></i></a></li>
         </ul>
     </nav>
-    <section>
+    <section id="section1">
         <div class="content_container_section1">
-            <div class="content_container_section1_image1">
+            <div class="content_container_section1_image1" id="parallaxY">
                 <img id="grinsekatze" class="images_svg" src="/Material/SVG/grinsekatze.svg" alt="">
             </div>
-            <div class="content_container_section1_image2">
+            <div class="content_container_section1_image2" id="parallaxY">
                 <img id="sprechblase_grinsekatze" class="images_svg" src="/Material/SVG/sprechblase_katze.svg" alt="">
             </div>
-            <div id="grinsekatze_text" class="content_container_section1_text">
+            <div class="content_container_section1_text" id="parallaxX">
                 <p>KLEIDET EUCH BUNT UND PHANTASIEVOLL, DANN FALLT IHR IM GARTEN DER HERZTKÖNIGIN NICHT AUF.</p>
             </div>
         </div>
     </section>
     <div class="seperator"><img class="images_svg" src="/Material/SVG/schluessel.svg" alt="">
     </div>
-    <section>
+    <section id="section2">
         <div class="content_container_section2">
             <div class="content_container_section2_text1">
                 <p>DU HÄLST EINE SCHMISSIGE REDE ODER SELTSAME SPIELE MIT DEM BRAUTPAAR FÜR EINE GUTE IDEE?</p>
             </div>
-            <div class="content_container_section2_text2">
+            <div class="content_container_section2_text2" id="parallaxX">
                 <p>ABER ABER! DU MÖCHTEST DOCH NICHT DIE KÖNIGIN VERÄRGERN!</p>
             </div>
-            <div class="content_container_section2_image1">
+            <div class="content_container_section2_image1" id="parallaxX">
                 <img id="herzkoenigin" class="images_svg" src="/Material/SVG/herzkoenigin.svg" alt="">
             </div>
             <div class="content_container_section2_image2">
@@ -60,13 +60,13 @@
         </div>
     </section>
     <div class="seperator"><img class="images_svg" src="/Material/SVG/schluessel.svg" alt=""></div>
-    <section>
+    <section id="section3">
         <div class="content_container_section3">
             <div class="content_container_section3_text">
                 <p>FÜR DEN FALL, IHR WOLLT DRAN DENKEN, UNS 'NE KLEINIGKEIT ZU SCHENKEN, SO WÄR'S EIN GROSSER WUNSCH
                     FÜRWAHR, UNS ZU GEBEN DIES IN BAR!</p>
             </div>
-            <div class="content_container_section3_images">
+            <div class="content_container_section3_images" id="content_container_section3_images" id="parallaxX">
                 <img id="tee_gesellschaft" class="images_svg" src="Material/SVG/tee_gesellschaft.svg" alt="">
             </div>
         </div>
@@ -94,6 +94,53 @@
             </p>
         </div>
     </footer>
+    <script>
+        function parallaxX(){
+            let elementsForParallaxX = document.querySelectorAll("#parallaxX");
+            for (let x of elementsForParallaxX) {
+                x.style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+            };
+        };
+
+        function getYOffsetFromElement(id){
+            const element = document.getElementById(id);
+            return element.offsetTop;
+        }
+        
+        function getHeightFromElements(obj){
+            let elementsFromDOM = document.querySelectorAll(obj);
+            let heightOfElement = 0;
+            for (let h of elementsFromDOM) {
+                heightOfElement += h.clientHeight;
+            }
+            return heightOfElement;
+        }
+
+        function parallaxY(){
+            let elementsForParallaxY = document.querySelectorAll("#parallaxY");
+            let heightOfElement = getHeightFromElements("#grinsekatze, #sprechblase_grinsekatze");
+            let offsetElement = getYOffsetFromElement("content_container_section3_images") + getYOffsetFromElement("section3");
+
+            for (let y of elementsForParallaxY) {
+                if(window.pageYOffset < (offsetElement - heightOfElement)){
+                y.style.transform = "translateY(" + (((window.pageYOffset * 1.0) - 20)) + "px)";
+                };
+            };
+        };
+
+        window.onscroll = function () {
+            // for(i = 0; i < document.querySelectorAll("#parallaxX", "#parallaxY").length; i++){
+            //     //console.log("gefunden" + i);
+            //     document.querySelectorAll("#parallaxX")[i].style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+            //     document.querySelectorAll("#parallaxY")[i].style.transform = "translateY(" + (((window.pageYOffset * 1.03) - 20)) + "px)";
+            // };
+            
+            parallaxY();
+            parallaxX();
+
+            
+        }
+    </script>
     <script language="javascript" type="text/javascript" src="script.js"></script>
 </body>
 
