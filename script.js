@@ -29,8 +29,11 @@ function useRegexOnName(htmlElemID) {
 
 // add form elements: label, input, checkbox, button
 var buttonCounter = 0;
-var inputCounter = 0;
+var inputCounterFn = 0;
+var inputCounterLn = 0;
+var inputCounterRec = 0;
 var checkboxCounter = 0;
+
 
 function addFormElementsLabelInput(label_for, label_text, input_placeholder, input_name, input_isrequired, parent_node, input_type, regex) {
 
@@ -81,22 +84,26 @@ function addFormElementsLabelInput(label_for, label_text, input_placeholder, inp
 
     // create inner input field
     if (input_type == "text") {
-        inputCounter++;
         const newInputField = document.createElement("input");
         newInputField.setAttribute("type", "text");
         newInputField.setAttribute("placeholder", input_placeholder);
-        newInputField.setAttribute("name", input_name);
-        newInputField.setAttribute("id", input_name + inputCounter);
         newInputField.setAttribute("pattern", regex);
+        newInputField.setAttribute("name", input_name);
         switch (input_name) {
             case "firstname":
-                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter + ")");
+                inputCounterFn++;
+                newInputField.setAttribute("id", input_name + inputCounterFn);
+                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounterFn + ")");
                 break;
             case "lastname":
-                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounter + ")");
+                inputCounterLn++;
+                newInputField.setAttribute("id", input_name + inputCounterLn);
+                newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + inputCounterLn + ")");
                 break;
             case "recommendation":
-                newInputField.setAttribute("onkeyup", "useRegexOnRecommendation(" + input_name + inputCounter + ")");
+                inputCounterRec++;
+                newInputField.setAttribute("id", input_name + inputCounterRec);
+                newInputField.setAttribute("onkeyup", "useRegexOnRecommendation(" + input_name + inputCounterRec + ")");
         };
         // newInputField.setAttribute("onkeyup", "useRegexOnName(" + input_name + ")");
         if (input_isrequired) newInputField.setAttribute("required", "");
@@ -145,7 +152,7 @@ function addFormSet() {
     addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
     addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
     addFormElementsLabelInput("nextday", "Frühstück", "", "nextday", false, newFormElement, "checkbox");
-    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[A-Za-zäÄöÖüÜß]+\s-\s[A-Za-zäÄöÖüÜß]+$");
+    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[A-Za-zäÄöÖüÜß]+\\s-\\s[A-Za-zäÄöÖüÜß]+$");
     addFormElementsLabelInput("", "", "", "", false, newFormElement, "button");
 
     //insert before submit button
