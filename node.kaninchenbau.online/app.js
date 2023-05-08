@@ -16,7 +16,7 @@ app.get("/", function(req, res){
 });
 
 app.post("/post", function(req,res){
-    //res.json({"message":"Hello my friend!"});
+    res.json({"message":"Hello my friend!"});
     form.parse(req, (err, fields, files) => {        
         if (err) reject({ err });
         console.log('fields:', fields);

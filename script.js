@@ -11,7 +11,7 @@ function navToggle() {
 
 // regex test
 function useRegexOnRecommendation(htmlElemID) {
-    let regex = /^[A-Za-zäÄöÖüÜß]+\s-\s[A-Za-zäÄöÖüÜß]+$/g;
+    let regex = /.+/g;
     let input = htmlElemID.value;
     console.log("value: " + input);
     if (regex.test(input)) htmlElemID.style = "background-color: white"
@@ -152,7 +152,7 @@ function addFormSet() {
     addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
     addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
     addFormElementsLabelInput("nextday", "Frühstück", "", "nextday", false, newFormElement, "checkbox");
-    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[A-Za-zäÄöÖüÜß]+\\s-\\s[A-Za-zäÄöÖüÜß]+$");
+    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", ".+");
     addFormElementsLabelInput("", "", "", "", false, newFormElement, "button");
 
     //insert before submit button

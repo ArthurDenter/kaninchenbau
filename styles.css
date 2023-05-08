@@ -681,7 +681,7 @@ a:hover {
 .mapboxgl-popup-content {
     font-family: 'Inter', sans-serif;
     padding: 0;
-    width: 180px;
+    width: 200px;
 }
 
 .mapboxgl-popup-content h3 {
