@@ -154,34 +154,65 @@ function addFormSet() {
     element.insertBefore(newFormElement, child);
 };
 
-// form submit
-function formSubmit() {
-    const form = document.getElementsByClassName("register_form")
-    form[0].onsubmit = async () => {
+// ---send FormData to server (under construction)---
 
-        for (let i = 0; i <= checkboxCounter; i++) {
-            //testen ob checkbox is checked if true => yes if false hidden input => no
-            if (document.getElementById("checkBox" + i).checked) {
-                document.getElementById('forCheckboxHidden' + i).disabled = true;
-            };
+
+//collect data from form in formdata object
+
+function getDataFromForm() {
+    const form = document.getElementById("register_form");
+
+    for (let i = 0; i <= checkboxCounter; i++) {
+        //testen ob checkbox is checked if true => yes if false hidden input => no
+        if (document.getElementById("checkBox" + i).checked) {
+            document.getElementById('forCheckboxHidden' + i).disabled = true;
         };
+    };
+
+    let data = new FormData(form);
+    return data;
+};
 
 
-        const formData = new FormData(form[0]);
-        try {
-            let response = await fetch('http://127.0.0.1:8081', {
-                method: 'POST',
-                body: formData
+//fetch data to server 
+
+const response = function fetchDataToServer(dataFromForm) {
+    return new promise((resolve, reject) => {
+
+        if (dataFromForm) {
+            resolve(() => {
+                const url = 'http://node.kaninchenbau.online/post';
+                //fetch data
+                let fetchdata = {
+                    method: "POST", // *GET, POST, PUT, DELETE, etc.
+                    mode: "no-cors", // no-cors, *cors, same-origin
+                    body: dataFromForm,
+                    headers: new Headers()
+                };
+                const response = fetch(url, fetchData).then(console.log(response));
             });
 
-            let result = await response.text();
-            console.log("Success:", result);
-            alert(result);
-        }
-        catch (error) {
-            console.error("Error:", error);
-            alert(error + "– Bitte schicken Sie Ihre Informationen via Mail.");
-        }
+        } else {
+            reject(console.log("Verbindung kann nicht hergestellt werden, keine Daten aus der Form."));
+        };
 
-    };
+    });
 };
+
+
+function dataHandler() {
+    try {
+        // instruction here
+        const newDataFromForm = getDataFromForm();
+        console.log(newDataFromForm);
+        fetchDataToServer(newDataFromForm);
+    }
+
+    catch (error) {
+        // error management here
+        console.log("Daten senden nicht möglich.");
+    }
+};
+
+
+//tell user whats going on with his data: send completed / failed 

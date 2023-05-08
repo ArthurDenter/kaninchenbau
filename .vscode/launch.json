@@ -4,11 +4,13 @@
     // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "/home/jad/repos/kaninchenbau/index.html"
+            "name": "Lauch Chrome against localhost",
+            "url": "http://localhost:5500",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

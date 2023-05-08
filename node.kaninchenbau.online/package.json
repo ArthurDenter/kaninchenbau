@@ -1,0 +1,16 @@
+{
+  "name": "node.kaninchenbau.online",
+  "version": "1.0.0",
+  "description": "webserver to put form data into database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jörg adomaitis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "formidable": "^2.1.1",
+    "mysql": "^2.18.1"
+  }
+}
