@@ -97,6 +97,12 @@ a:hover {
     border: thin solid #FF002D;
 }
 
+#index_button:hover{
+    background-color: #FF002D;
+    color:#E0D4B4;
+    border: thin solid #E0D4B4;
+}
+
 .section_register {
     padding: 10vw;
 }
@@ -339,6 +345,7 @@ a:hover {
 
 }
 
+.form_subheadline>h2,
 .heading>h1,
 .container_section_2_text2,
 .container_section_2_text1>p {
@@ -348,6 +355,12 @@ a:hover {
     color:#E0D4B4;
     margin: 0;
     line-height: 98%;
+}
+
+.form_subheadline>h2{
+  text-align: left;
+  color: #AD9862;
+  font-weight: normal;
 }
 
 .container_section_2_div_svg_6_1 {
@@ -1161,6 +1174,11 @@ footer>* h3 {
 
     .heading>h1{
         font-size: 0.8em;
+    }
+    
+    .register_form>h2{
+    text-align: left;
+    color: #AD9862;
     }
 
     .map_interactive {
