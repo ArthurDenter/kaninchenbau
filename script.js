@@ -1,3 +1,19 @@
+// global variables
+
+const modal = document.getElementById("myModal");
+var modalIsActive = false;
+
+const inputNodeListRecommendation = document.getElementsByName("recommendation");
+const inputNodeListLastname = document.getElementsByName("lastname");
+const inputNodeListFirstname = document.getElementsByName("firstname");
+const buttonNodeList = document.getElementsByTagName("button");
+
+var buttonCounter = 0;
+var inputCounterFn = 0;
+var inputCounterLn = 0;
+var inputCounterRec = 0;
+var checkboxCounter = 0;
+
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function navToggle() {
     var x = document.getElementById("myTopNav");
@@ -9,31 +25,137 @@ function navToggle() {
     }
 };
 
+
 // regex test
 function useRegexOnRecommendation(htmlElemID) {
-    let regex = /.+/g;
+    let regex = /^[a-zA-ZäÄöÖüÜß\s\-]*$/g;
     let input = htmlElemID.value;
+
+    let x = htmlElemID.offsetLeft + 40;
+    let y = htmlElemID.offsetTop - 40;
+    console.log("Element X: " + x);
+    console.log("Element Y: " + y);
+
     console.log("value: " + input);
-    if (regex.test(input)) htmlElemID.style = "background-color: white"
-    else htmlElemID.style = "background-color: pink";
+    if (regex.test(input)) {
+        htmlElemID.style = "background-color: white";
+        modal.style.display = "none";
+        modal.style.top = "0 px";
+        modal.style.left = "0 px";
+        modalIsActive = false;
+        inputNodeListLastname.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        inputNodeListFirstname.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        inputNodeListRecommendation.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        for (const but of buttonNodeList) {
+            if(but.disabled) but.removeAttribute("disabled","")
+        };
+    }
+    else {
+        modalIsActive = true;
+        htmlElemID.style = "background-color: pink";
+        modal.style.top = "" + y + "px";
+        modal.style.left = "" + x + "px";
+        modal.style.display = "block";
+        document.getElementById("myP").innerHTML = "<b>Bitte nur Buchstaben, Leerzeichen <br>oder Bindestriche verwenden!</b>";
+        switch (htmlElemID.name) {
+            case "firstname":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListFirstname.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+                break;
+            case "lastname":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListLastname.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+                break;
+            case "recommendation":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+        }
+    }
 }
 
 function useRegexOnName(htmlElemID) {
-    let regex = /^[a-zA-ZäÄöÖüÜß]+$/g;
+    let regex = /^[a-zA-ZäÄöÖüÜß\s]*$/g;
     let input = htmlElemID.value;
+    let x = htmlElemID.offsetLeft + 40;
+    let y = htmlElemID.offsetTop - 40;
+    console.log("Element X: " + x);
+    console.log("Element Y: " + y);
+
     console.log("value: " + input);
-    if (regex.test(input)) htmlElemID.style = "background-color: white"
-    else htmlElemID.style = "background-color: pink";
+    if (regex.test(input)) {
+        htmlElemID.style = "background-color: white";
+        modal.style.display = "none";
+        modal.style.top = "0 px";
+        modal.style.left = "0 px";
+        modalIsActive = false;
+        inputNodeListLastname.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        inputNodeListFirstname.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        inputNodeListRecommendation.forEach((node)=>{
+            if(node.disabled === true) node.removeAttribute("disabled");
+        });
+        for (const but of buttonNodeList) {
+            if(but.disabled) but.removeAttribute("disabled","")
+        };
+    }
+    else {
+        modalIsActive = true;
+        htmlElemID.style = "background-color: pink";
+        modal.style.top = "" + y + "px";
+        modal.style.left = "" + x + "px";
+        modal.style.display = "block";
+        document.getElementById("myP").innerHTML = "<b>Bitte nur Buchstaben verwenden!</b>";
+        switch (htmlElemID.name) {
+            case "firstname":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListFirstname.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+                break;
+            case "lastname":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListLastname.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+                break;
+            case "recommendation":
+                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
+                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
+                inputNodeListRecommendation.forEach((node)=>{
+                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                });
+        }
+    }
 }
 
 
 // add form elements: label, input, checkbox, button
-var buttonCounter = 0;
-var inputCounterFn = 0;
-var inputCounterLn = 0;
-var inputCounterRec = 0;
-var checkboxCounter = 0;
-
 
 function addFormElementsLabelInput(label_for, label_text, input_placeholder, input_name, input_isrequired, parent_node, input_type, regex) {
 
@@ -149,10 +271,10 @@ function addFormSet() {
     newFormElement.setAttribute("id", "form_elements");
 
     //  create inner div plus elements
-    addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
-    addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß]+$");
+    addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
+    addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
     addFormElementsLabelInput("nextday", "Frühstück", "", "nextday", false, newFormElement, "checkbox");
-    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", ".+");
+    addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s\\-]*$");
     addFormElementsLabelInput("", "", "", "", false, newFormElement, "button");
 
     //insert before submit button

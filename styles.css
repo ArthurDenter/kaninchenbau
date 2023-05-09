@@ -107,6 +107,27 @@ a:hover {
     padding: 10vw;
 }
 
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    max-width: 25vw;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: pink;
+    padding: 0em 1.5em 0em 1.5em;
+    color:#FF002D;
+    border: 1px solid #FF002D;
+    width: max-content; /* Could be more or less, depending on screen size */
+    font-size: 1.2vw;
+    font-family: 'Inter', sans-serif;
+    border-radius: 1.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
 .register_form {
     display: flex;
     flex-direction: column;

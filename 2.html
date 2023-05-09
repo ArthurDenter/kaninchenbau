@@ -34,17 +34,26 @@
                     MUSIKEMPFEHLUNGEN GEBEN, DIE AUF UNSERER HOCHZEIT DEINER MEINUNG NACH, AUF JEDEN FALL GESPIELT
                     WERDEN SOLLTEN.</p>
             </div>
-            <div class="form_subheadline"><h2>Erinnerst du dich daran, wer du bist?</h2></div>
+             <!-- The ErrorModal -->
+             <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <p id="myP">Some text in the Modal..</p>
+                </div>
+            </div>
+            <div class="form_subheadline">
+                <h2>Erinnerst du dich daran, wer du bist?</h2>
+            </div>
             <div class="form_elements" id="form_elements">
                 <div class="form_field_container">
                     <label for="firstname">Vorname</label>
                     <input type="text" placeholder="Vorname" name="firstname" id="firstname0"
-                        onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-ZäÄöÖüÜß]+$" required>
+                        onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-ZäÄöÖüÜß\s]*$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="lastname">Nachname</label>
                     <input type="text" placeholder="Nachname" name="lastname" id="lastname0"
-                        onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-ZäÄöÖüÜß]+$" required>
+                        onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-ZäÄöÖüÜß\s]*$" required>
                 </div>
                 <div class="form_field_container">
                     <label for="nextday">Frühstück</label>
@@ -57,8 +66,7 @@
                 <div class="form_field_container">
                     <label for="recommendation">Musikwunsch (Interpret - Titel)</label>
                     <input type="text" placeholder="Interpret - Songname" name="recommendation" id="recommendation0"
-                        onkeyup="useRegexOnRecommendation(recommendation0)"
-                        pattern=".+">
+                        onkeyup="useRegexOnRecommendation(recommendation0)" pattern="^[a-zA-ZäÄöÖüÜß\s\-]*$">
                 </div>
                 <div class="form_field_container" id="add_form_elements">
                     <button type="button" id="plusBtn0" onclick="addFormSet()">
@@ -70,7 +78,9 @@
             </div>
 
             <div class="clearfix" id="submit_container">
-                <button class="signupbtn" type="submit" formenctype="multipart/form-data" formaction="https://node.kaninchenbau.online/post" formmethod="post" form="register_form" formtarget="_blank">absenden</button>
+                <button class="signupbtn" type="submit" formenctype="multipart/form-data"
+                    formaction="https://node.kaninchenbau.online/post" formmethod="post" form="register_form"
+                    formtarget="_blank">absenden</button>
                 <!-- onclick="dataHandler()" -->
             </div>
         </form>
@@ -89,7 +99,8 @@
             <h2>Trauzeugen:</h2>
         </div>
         <div class="footer_text1">
-            <p>Katharina Sattler und Jörg Adomaitis<br><a href="mailto:katharinaundjoerg@kaninchenbau.online">m: katharinaundjoerg@kaninchenbau.online</a></p>
+            <p>Katharina Sattler und Jörg Adomaitis<br><a href="mailto:katharinaundjoerg@kaninchenbau.online">m:
+                    katharinaundjoerg@kaninchenbau.online</a></p>
         </div>
         <div class="footer_text2">
             <p>Franz Juraszczyk<br><a href="mailto:f_jura@t-online.de">m: f_jura01@t-online.de</a></p>
