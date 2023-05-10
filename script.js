@@ -271,8 +271,8 @@ function addFormSet() {
     newFormElement.setAttribute("id", "form_elements");
 
     //  create inner div plus elements
-    addFormElementsLabelInput("firstname", "Vorname", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
-    addFormElementsLabelInput("lastname", "Nachname", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
+    addFormElementsLabelInput("firstname", "Vorname*", "Vorname", "firstname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
+    addFormElementsLabelInput("lastname", "Nachname*", "Nachname", "lastname", true, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s]*$");
     addFormElementsLabelInput("nextday", "Frühstück", "", "nextday", false, newFormElement, "checkbox");
     addFormElementsLabelInput("recommendation", "Musikwunsch (Interpret - Titel)", "Interpret - Songname", "recommendation", false, newFormElement, "text", "^[a-zA-ZäÄöÖüÜß\\s\\-]*$");
     addFormElementsLabelInput("", "", "", "", false, newFormElement, "button");

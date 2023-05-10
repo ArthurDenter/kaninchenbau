@@ -47,12 +47,12 @@
             </div>
             <div class="form_elements" id="form_elements">
                 <div class="form_field_container">
-                    <label for="firstname">Vorname</label>
+                    <label for="firstname">Vorname*</label>
                     <input type="text" placeholder="Vorname" name="firstname" id="firstname0"
                         onkeyup="useRegexOnName(firstname0)" pattern="^[a-zA-ZäÄöÖüÜß\s]*$" required>
                 </div>
                 <div class="form_field_container">
-                    <label for="lastname">Nachname</label>
+                    <label for="lastname">Nachname*</label>
                     <input type="text" placeholder="Nachname" name="lastname" id="lastname0"
                         onkeyup="useRegexOnName(lastname0)" pattern="^[a-zA-ZäÄöÖüÜß\s]*$" required>
                 </div>
@@ -84,6 +84,7 @@
                     formtarget="_blank">absenden</button>
                 <!-- onclick="dataHandler()" -->
             </div>
+            <div class="required_note"><p>Die mit * gekennzeichneten Felder müssen ausgefüllt werden</p></div>
         </form>
     </section>
     <footer>
