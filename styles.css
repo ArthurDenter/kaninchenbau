@@ -22,7 +22,7 @@ body {
 
 .nav_bar {
     background-color: #FF002D;
-    padding: 0.5em;
+    padding: 0.5em 1em 0.5em 1em;
 }
 
 .nav_logo_svg {
@@ -1390,6 +1390,11 @@ footer>* h3 {
         order: 2;
         padding: 1em;
         border-bottom: thin dotted #FFF;
+    }
+
+    .active_li{
+        /* animation: active_li_animation 2s ease 0s infinite normal forwards; */
+        text-decoration: underline overline #E0D4B4 wavy;
     }
 
     /* .nav_bar.responsive>.nav_linklist>#nav_last_item {
