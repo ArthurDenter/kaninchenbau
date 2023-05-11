@@ -25,6 +25,33 @@ function navToggle() {
     }
 };
 
+// highlight active page
+function setNavBgForPage() {
+    let li;
+    const url = window.location.pathname;
+    const li_items = document.getElementsByClassName("nav_linklist_item");
+    for (let li_item of li_items) {
+        li_item.classList.remove("active_li");
+    }
+    switch (url) {
+        case "/1.html":
+            // li = document.getElementById("die_reise");
+            li_items[0].classList.add("active_li");
+            break;
+        case "/2.html":
+            // li = document.getElementById("vor_den_toren");
+            li_items[1].classList.add("active_li");
+            break;
+        case "/3.html":
+            // li = document.getElementById("im_wunderland");
+            li_items[2].classList.add("active_li");
+            break;
+        case "/4.html":
+            // li = document.getElementById("die_rueckkehr");
+            li_items[3].classList.add("active_li");
+    }
+}
+
 
 // regex test
 function useRegexOnRecommendation(htmlElemID) {
@@ -43,17 +70,17 @@ function useRegexOnRecommendation(htmlElemID) {
         modal.style.top = "0 px";
         modal.style.left = "0 px";
         modalIsActive = false;
-        inputNodeListLastname.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListLastname.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
-        inputNodeListFirstname.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListFirstname.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
-        inputNodeListRecommendation.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListRecommendation.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
         for (const but of buttonNodeList) {
-            if(but.disabled) but.removeAttribute("disabled","")
+            if (but.disabled) but.removeAttribute("disabled", "")
         };
     }
     else {
@@ -65,27 +92,27 @@ function useRegexOnRecommendation(htmlElemID) {
         document.getElementById("myP").innerHTML = "<b>Bitte nur Buchstaben, Leerzeichen <br>oder Bindestriche verwenden!</b>";
         switch (htmlElemID.name) {
             case "firstname":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListFirstname.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListLastname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListFirstname.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
                 break;
             case "lastname":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListLastname.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListFirstname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListLastname.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
                 break;
             case "recommendation":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListFirstname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListLastname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
         }
     }
@@ -106,17 +133,17 @@ function useRegexOnName(htmlElemID) {
         modal.style.top = "0 px";
         modal.style.left = "0 px";
         modalIsActive = false;
-        inputNodeListLastname.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListLastname.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
-        inputNodeListFirstname.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListFirstname.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
-        inputNodeListRecommendation.forEach((node)=>{
-            if(node.disabled === true) node.removeAttribute("disabled");
+        inputNodeListRecommendation.forEach((node) => {
+            if (node.disabled === true) node.removeAttribute("disabled");
         });
         for (const but of buttonNodeList) {
-            if(but.disabled) but.removeAttribute("disabled","")
+            if (but.disabled) but.removeAttribute("disabled", "")
         };
     }
     else {
@@ -128,27 +155,27 @@ function useRegexOnName(htmlElemID) {
         document.getElementById("myP").innerHTML = "<b>Bitte nur Buchstaben verwenden!</b>";
         switch (htmlElemID.name) {
             case "firstname":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListFirstname.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListLastname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListFirstname.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
                 break;
             case "lastname":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListLastname.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListFirstname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListLastname.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
                 break;
             case "recommendation":
-                for (const but of buttonNodeList) {but.setAttribute("disabled","")};
-                inputNodeListFirstname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListLastname.forEach((node)=>{node.setAttribute("disabled","");});
-                inputNodeListRecommendation.forEach((node)=>{
-                    if(!(node.id == htmlElemID.id)) node.setAttribute("disabled","");
+                for (const but of buttonNodeList) { but.setAttribute("disabled", "") };
+                inputNodeListFirstname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListLastname.forEach((node) => { node.setAttribute("disabled", ""); });
+                inputNodeListRecommendation.forEach((node) => {
+                    if (!(node.id == htmlElemID.id)) node.setAttribute("disabled", "");
                 });
         }
     }
