@@ -545,18 +545,6 @@ a:hover {
     direction: rtl;
 }
 
-/* 
-.container_section_2_text2>p {
-    font-size: 3vw;
-    text-align: center;
-    justify-self: end;
-    font-family: 'Timepiece', serif;
-    font-weight: normal;
-    color: #6D34E4;
-    margin: 0;
-
-} */
-
 .container_section_2_pathtext {
     font-size: 1.11em;
     fill: #fff;
