@@ -8,8 +8,6 @@
     <meta name="robots" content="noindex">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <title>Joerg und Katharina heiraten im Wunderland</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/Material/SVG/favicon.svg" type="image/svg+xml">
@@ -19,9 +17,8 @@
     <nav class="nav_bar" id="myTopNav">
         <ul class="nav_linklist">
             <li class="nav_linklist_logo"><a href="1.html">
-                <img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82"
-                        height="92">
-            </a></li>
+                    <img class="nav_logo_svg" src="/Material/SVG/ringe_logo.svg" alt="" width="82" height="92">
+                </a></li>
             <li class="nav_linklist_item" id="nav_first_item"><a href="1.html">Die Reise</a></li>
             <li class="nav_linklist_item"><a href="2.html">Vor den Toren</a></li>
             <li class="nav_linklist_item"><a href="3.html">Im Wunderland</a></li>
@@ -38,8 +35,10 @@
             <div class="content_container_section1_image2" id="parallaxY">
                 <img id="sprechblase_grinsekatze" class="images_svg" src="/Material/SVG/sprechblase_katze.svg" alt="">
             </div>
-            <div class="content_container_section1_text" id="parallaxX">
-                <p>KLEIDET EUCH BUNT UND PHANTASIEVOLL, DANN FALLT IHR IM GARTEN DER HERZTKÖNIGIN NICHT AUF.</p>
+            <div class="content_container_section1_text_wrapper">
+                <div class="content_container_section1_text" id="parallaxX">
+                    <p>KLEIDET EUCH BUNT UND PHANTASIEVOLL, DANN FALLT IHR IM GARTEN DER HERZTKÖNIGIN NICHT AUF.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -88,7 +87,8 @@
             <h2>Trauzeugen:</h2>
         </div>
         <div class="footer_text1">
-            <p>Katharina Sattler und Jörg Adomaitis<br><a href="mailto:katharinaundjoerg@kaninchenbau.online">m: katharinaundjoerg@kaninchenbau.online</a></p>
+            <p>Katharina Sattler und Jörg Adomaitis<br><a href="mailto:katharinaundjoerg@kaninchenbau.online">m:
+                    katharinaundjoerg@kaninchenbau.online</a></p>
         </div>
         <div class="footer_text2">
             <p>Franz Juraszczyk<br><a href="mailto:f_jura@t-online.de">m: f_jura01@t-online.de</a></p>
@@ -97,19 +97,27 @@
         </div>
     </footer>
     <script>
-        function parallaxX(){
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+        function parallaxX() {
             let elementsForParallaxX = document.querySelectorAll("#parallaxX");
             for (let x of elementsForParallaxX) {
-                x.style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+                if (x.className === "content_container_section1_text") {
+                    x.style.transform = "translateX(" + ((window.pageYOffset * 0.075)) + "px)";
+                } else {
+                    x.style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+                }
+
             };
         };
 
-        function getYOffsetFromElement(id){
+        function getYOffsetFromElement(id) {
             const element = document.getElementById(id);
             return element.offsetTop;
         }
-        
-        function getHeightFromElements(obj){
+
+        function getHeightFromElements(obj) {
             let elementsFromDOM = document.querySelectorAll(obj);
             let heightOfElement = 0;
             for (let h of elementsFromDOM) {
@@ -118,29 +126,21 @@
             return heightOfElement;
         }
 
-        function parallaxY(){
+        function parallaxY() {
             let elementsForParallaxY = document.querySelectorAll("#parallaxY");
             let heightOfElement = getHeightFromElements("#grinsekatze, #sprechblase_grinsekatze");
             let offsetElement = getYOffsetFromElement("content_container_section3_images") + getYOffsetFromElement("section3");
 
             for (let y of elementsForParallaxY) {
-                if(window.pageYOffset < (offsetElement - heightOfElement)){
-                y.style.transform = "translateY(" + (((window.pageYOffset * 1.0) - 20)) + "px)";
+                if (window.pageYOffset < (offsetElement - heightOfElement)) {
+                    y.style.transform = "translateY(" + (((window.pageYOffset * 1.0) - 20)) + "px)";
                 };
             };
         };
 
         window.onscroll = function () {
-            // for(i = 0; i < document.querySelectorAll("#parallaxX", "#parallaxY").length; i++){
-            //     //console.log("gefunden" + i);
-            //     document.querySelectorAll("#parallaxX")[i].style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
-            //     document.querySelectorAll("#parallaxY")[i].style.transform = "translateY(" + (((window.pageYOffset * 1.03) - 20)) + "px)";
-            // };
-            
-            parallaxY();
-            parallaxX();
-
-            
+             parallaxY();
+             parallaxX();
         }
     </script>
     <script language="javascript" type="text/javascript" src="script.js"></script>
