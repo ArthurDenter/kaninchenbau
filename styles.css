@@ -358,10 +358,15 @@ a:hover {
 .container_section_1_div_svg2 {
     grid-area: svg2;
     margin: 4% 0 4% 0;
+    
+    /* transform: translateX(-20px); */
 }
 
 .container_section_1_div_svg3 {
     grid-area: svg3;
+    /* border: thin solid blue; */
+    overflow-x: hidden;
+    /* transform: translateX(20px); */
 }
 
 #container_section_1_svg3 {
@@ -833,7 +838,6 @@ a:hover {
 .content_container_section1_text {
     /* grid-column: 5 / span 4;
     grid-row: 3/ span 6; */
-    transform: translateX(-20px);
     align-self: start;
     width: 80%;
 }
@@ -1116,7 +1120,6 @@ footer>* h3 {
     .content_container_section1_text {
         grid-column: 5 / span 4;
         grid-row: 3/ span 6;
-        transform: translateX(-20px);
     }
 
     .content_container_section2_image1 {

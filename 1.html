@@ -32,11 +32,8 @@
         <div class="container_section_1_div_svg1"><img class="main_page_img" id="container_section_1_svg1"
                 src="/Material/SVG/es_wird_einmal.svg" alt="" width="867.79px" height="269.82px"></div>
         <div class="container_section_1_div_svg2"><img class="main_page_img" id="container_section_1_svg2"
-                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="867.79px" height="616.2px"
-                style="transform: translateX(20px);"></div>
-        <div class="container_section_1_div_svg3" id="container_section_1_div_svg3"><img class="main_page_img" id="container_section_1_svg3"
-                src="/Material/SVG/herzkoenigin.svg" alt="" width="481px" height="606px"
-                style="transform: translateX(-20px);"></div>
+                src="/Material/SVG/ihre_liebe_kroenen.svg" alt="" width="867.79px" height="616.2px"></div>
+        <div class="container_section_1_div_svg3" id="container_section_1_div_svg3"><img class="main_page_img" id="container_section_1_svg3" src="/Material/SVG/herzkoenigin.svg" alt="" width="481px" height="606px"></div>
         <div class="container_section_1_div_svg4"><img class="main_page_img" id="container_section_1_svg4"
                 src="/Material/SVG/trank.svg" alt="" width="155.9px" height="200px">
         </div>
@@ -149,12 +146,12 @@
 
         function translateTextAlongXAxis() {
             let txtImg = document.getElementById("container_section_1_svg2");
-            txtImg.style.transform = "translateX(" + (((window.pageYOffset * 0.015) + 20) * (-1)) + "px)";
+            txtImg.style.transform = "translateX(" + (((window.pageYOffset * 0.025)) * (-1)) + "px)";
         }
         
         function translateImgAlongXAxis() {
-            let img = document.getElementById("container_section_1_div_svg3");
-            img.style.transform = "translateX(" + (((window.pageYOffset * 0.03) - 20)) + "px)";
+            let img = document.getElementById("container_section_1_svg3");
+            img.style.transform = "translateX(" + (((window.pageYOffset * 0.03))) + "px)";
         }
     </script>
 </body>
